@@ -7,7 +7,7 @@ pipeline{
             label "slave_java"
         }
     }
-    tools {nodejs 'nodejs-16'}
+    tools {nodejs 'nodejs-16.6'}
 
     stages {
         stage('build') {
