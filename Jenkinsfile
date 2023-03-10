@@ -1,10 +1,10 @@
-def registry = 'https://valaxy02.jfrog.io'
-def imageName = 'valaxy02.jfrog.io/nodejs-docker/demo-nodejs'
+def registry = 'https://devopshunger.jfrog.io'
+def imageName = 'devopshunger.jfrog.io/nodejs-docker'
 def version   = '1.0.2'
 pipeline{
     agent {
         node {
-            label "valaxy"
+            label "slave_java"
         }
     }
     tools {nodejs 'nodejs-16'}
@@ -40,7 +40,7 @@ stage(" Docker Build ") {
         steps {
             script {
                echo '<--------------- Docker Publish Started --------------->'  
-                docker.withRegistry(registry, 'jfrog-access'){
+                docker.withRegistry(registry, 'Jfrog'){
                     app.push()
                 }    
                echo '<--------------- Docker Publish Ended --------------->'  
