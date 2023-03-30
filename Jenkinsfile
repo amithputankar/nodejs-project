@@ -4,7 +4,7 @@ def version   = '1.0.2'
 pipeline{
     agent {
         node {
-            label "slave_java"
+            label "salve_java"
         }
     }
     tools {nodejs 'nodejs-16.6'}
